@@ -41,7 +41,7 @@ header .home-link {
     text-decoration: none;
 }
 
-header button {
+button {
     padding: 0.5rem 1rem;
     border: none;
     background-color: #738821;
@@ -50,7 +50,7 @@ header button {
     cursor: pointer;
 }
 
-header button:hover {
+button:hover {
     background-color: #B8CD4E;
 }
 
@@ -71,3 +71,8 @@ header button:hover {
     text-align: center;
     height: 80vh;
 }
+
+.container {
+    margin: 20px;
+}
+
