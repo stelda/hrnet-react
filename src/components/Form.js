@@ -2,7 +2,7 @@
 import { BirthDatePicker, StartDatePicker } from '../components/DatePicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../css/custom-datepicker.css';
-import states from '../data/states';
+import { StateSelect, DepartmentSelect } from '../components/Select';
 
 function Form({ onSave }) {
     const [employee, setEmployee] = useState({
@@ -61,26 +61,14 @@ function Form({ onSave }) {
                 <input type="text" id="city" name="city" value={employee.city} onChange={handleChange} />
 
                 <label htmlFor="state">State</label>
-                <select name="state" id="state" value={employee.state} onChange={handleChange}>
-                    {states.map((state) => (
-                        <option key={state.abbreviation} value={state.abbreviation}>
-                            {state.name}
-                        </option>
-                    ))}
-                </select>
+                <StateSelect value={employee.state} onChange={handleChange} />
 
                 <label htmlFor="zip-code">Zip Code</label>
                 <input type="number" id="zip-code" name="zipCode" value={employee.zipCode} onChange={handleChange} />
             </fieldset>
 
             <label htmlFor="department">Department</label>
-            <select name="department" id="department" value={employee.department} onChange={handleChange}>
-                <option>Sales</option>
-                <option>Marketing</option>
-                <option>Engineering</option>
-                <option>Human Resources</option>
-                <option>Legal</option>
-            </select>
+            <DepartmentSelect value={employee.department} onChange={handleChange} />
 
             <button type="submit">Save</button>
         </form>
