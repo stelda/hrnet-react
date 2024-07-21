@@ -59,15 +59,13 @@ function Form({ onSave }) {
 
                 <label htmlFor="city">City</label>
                 <input type="text" id="city" name="city" value={employee.city} onChange={handleChange} />
-
-                <label htmlFor="state">State</label>
+                
                 <StateSelect value={employee.state} onChange={handleChange} />
 
                 <label htmlFor="zip-code">Zip Code</label>
                 <input type="number" id="zip-code" name="zipCode" value={employee.zipCode} onChange={handleChange} />
             </fieldset>
-
-            <label htmlFor="department">Department</label>
+            
             <DepartmentSelect value={employee.department} onChange={handleChange} />
 
             <button type="submit">Save</button>
