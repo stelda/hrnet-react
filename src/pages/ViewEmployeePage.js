@@ -1,4 +1,5 @@
 ﻿import React, { useEffect, useState } from 'react';
+import Table from '../components/Table';
 
 function ViewEmployeePage() {
     const [employees, setEmployees] = useState([]);
@@ -11,17 +12,7 @@ function ViewEmployeePage() {
     return (
         <div>
             <h2>View Employees</h2>
-            <ul>
-                {employees.length === 0 ? (
-                    <li>No employees found.</li>
-                ) : (
-                    employees.map((employee, index) => (
-                        <li key={index}>
-                            {employee.firstName} {employee.lastName} - {employee.department}
-                        </li>
-                    ))
-                )}
-            </ul>
+            <Table data={employees} />
         </div>
     );
 }
