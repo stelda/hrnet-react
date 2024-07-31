@@ -1,13 +1,16 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addEmployee } from '../redux/employeeSlice';
 import Table from '../components/Table';
 
 function ViewEmployeePage() {
-    const [employees, setEmployees] = useState([]);
+    const employees = useSelector(state => state.employees);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const storedEmployees = JSON.parse(localStorage.getItem('employees')) || [];
-        setEmployees(storedEmployees);
-    }, []);
+        dispatch(addEmployee(storedEmployees));
+    }, [dispatch]);
 
     return (
         <div>

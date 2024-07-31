@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Pagination from '../components/Pagination';
 import SearchBar from '../components/SearchBar';
 
-// todo 3: ajouter css pour le tableau
-// todo 4: changer le format des dates
-// todo 5: ajouter la prossibilité de trier les colonnes
-function Table({ data }) {
+function Table({data}) {
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
@@ -30,7 +27,7 @@ function Table({ data }) {
 
     return (
         <div>
-            <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+            <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
             <Pagination
                 rowsPerPage={rowsPerPage}
                 setRowsPerPage={setRowsPerPage}
@@ -50,13 +47,13 @@ function Table({ data }) {
                 {selectedData.map((row, rowIndex) => (
                     <tr key={rowIndex}>
                         {headers.map((header, colIndex) => (
-                            <td key={colIndex}>{row[header]}</td>
+                           <td key={colIndex}>{row[header] instanceof Date ? row[header].toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) : row[header]}</td>
                         ))}
                     </tr>
                 ))}
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
+</div>
     );
 }
 

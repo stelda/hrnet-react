@@ -1,15 +1,16 @@
 ﻿import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addEmployee } from '../redux/employeeSlice';
 import Form from '../components/Form';
 import Modal from '../components/Modal';
 import '../css/main.css';
 
 function CreateEmployeePage() {
+    const dispatch = useDispatch();
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const saveEmployee = (employee) => {
-        const employees = JSON.parse(localStorage.getItem('employees')) || [];
-        employees.push(employee);
-        localStorage.setItem('employees', JSON.stringify(employees));
+        dispatch(addEmployee(employee));
         setModalIsOpen(true);
     };
 

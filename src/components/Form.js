@@ -1,10 +1,11 @@
 ﻿import React, { useState } from 'react';
 import { BirthDatePicker, StartDatePicker } from '../components/DatePicker';
+import { StateSelect, DepartmentSelect } from '../components/Select';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../css/custom-datepicker.css';
-import { StateSelect, DepartmentSelect } from '../components/Select';
 
 function Form({ onSave }) {
+
     const [employee, setEmployee] = useState({
         firstName: '',
         lastName: '',
@@ -28,7 +29,27 @@ function Form({ onSave }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSave(employee);
+
+        const employeeToSend = {
+            ...employee,
+            dateOfBirth: employee.dateOfBirth.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }),
+            startDate: employee.startDate.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })
+        };
+
+        onSave(employeeToSend);
+
+        // reset form
+        setEmployee({
+            firstName: '',
+            lastName: '',
+            dateOfBirth: new Date(),
+            startDate: new Date(),
+            department: 'Sales',
+            street: '',
+            city: '',
+            state: 'AL',
+            zipCode: ''
+        });
     };
 
     return (
