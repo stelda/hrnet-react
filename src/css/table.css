@@ -1,6 +1,7 @@
 ﻿table {
     width: 100%;
     border-collapse: collapse;
+    background-color: rgba(184,205, 78, 0.1);
 }
 
 th, td {
@@ -11,4 +12,42 @@ th, td {
 
 th {
     background-color: #f2f2f2;
+}
+
+.pagination {
+    border: 5px solid deeppink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.results {
+    border: 5px solid deeppink;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 20px 0;
+}
+
+.pages {
+    border: 5px solid darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 20px 0;
+}
+
+.searchbar {
+    border: 5px solid blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 220px;
+}
+
+input#search {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
 }

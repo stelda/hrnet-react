@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+import '../css/table.css';
 
 function Pagination({ rowsPerPage, setRowsPerPage, currentPage, setCurrentPage, totalItems }) {
     const handleChangeRowsPerPage = (event) => {
@@ -19,16 +20,19 @@ function Pagination({ rowsPerPage, setRowsPerPage, currentPage, setCurrentPage, 
     };
 
     return (
-        <div>
-            <label htmlFor="rowsPerPage">Show </label>
-            <select id="rowsPerPage" value={rowsPerPage} onChange={handleChangeRowsPerPage}>
-                <option value={10}>10</option>
-                <option value={25}>25</option>
-                <option value={50}>50</option>
-                <option value={100}>100</option>
-            </select>
-            <span> results</span>
-            <div>
+        <div className='pagination'>
+            <div className='results'>
+                <label htmlFor="rowsPerPage">Show </label>
+                <select id="rowsPerPage" value={rowsPerPage} onChange={handleChangeRowsPerPage}>
+                    <option value={10}>10</option>
+                    <option value={25}>25</option>
+                    <option value={50}>50</option>
+                    <option value={100}>100</option>
+                </select>
+                <span> results</span>
+            </div>
+
+            <div className='pages'>
                 <button onClick={handlePreviousPage} disabled={currentPage === 1}>
                     Previous
                 </button>

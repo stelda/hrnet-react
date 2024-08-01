@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+import '../css/table.css';
 
 function SearchBar({ searchQuery, setSearchQuery }) {
     const handleSearchChange = (event) => {
@@ -6,8 +7,10 @@ function SearchBar({ searchQuery, setSearchQuery }) {
     };
 
     return (
-        <div>
-            <label htmlFor="search">Search: </label>
+        <div className='searchbar'>
+            <label htmlFor="search">
+                <i className='fas fa-search'></i>
+            </label>
             <input
                 type="text"
                 id="search"

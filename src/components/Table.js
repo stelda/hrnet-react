@@ -40,13 +40,7 @@ function Table({data}) {
     return (
         <div>
             <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
-            <Pagination
-                rowsPerPage={rowsPerPage}
-                setRowsPerPage={setRowsPerPage}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                totalItems={filteredData.length}
-            />
+
             <table>
                 <thead>
                 <tr>
@@ -69,6 +63,14 @@ function Table({data}) {
                     ))}
                 </tbody>
             </table>
+
+            <Pagination
+                rowsPerPage={rowsPerPage}
+                setRowsPerPage={setRowsPerPage}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                totalItems={filteredData.length}
+            />
 </div>
     );
 }

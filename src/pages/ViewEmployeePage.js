@@ -14,8 +14,10 @@ function ViewEmployeePage() {
 
     return (
         <div>
-            <h2>View Employees</h2>
-            <Table data={employees} />
+            <div className="container">
+                <h2>View Employees</h2>
+                <Table data={employees} />
+            </div>
         </div>
     );
 }

@@ -54,26 +54,25 @@ function Form({ onSave }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="first-name">First Name</label>
-            <input type="text" id="first-name" name="firstName" value={employee.firstName} onChange={handleChange} />
+            <fieldset className="personal-details">
+                <legend>Personal Details</legend>
+                <label htmlFor="first-name">First Name</label>
+                <input type="text" id="first-name" name="firstName" value={employee.firstName} onChange={handleChange}/>
 
-            <label htmlFor="last-name">Last Name</label>
-            <input type="text" id="last-name" name="lastName" value={employee.lastName} onChange={handleChange} />
+                <label htmlFor="last-name">Last Name</label>
+                <input type="text" id="last-name" name="lastName" value={employee.lastName} onChange={handleChange}/>
 
-            <label htmlFor="date-of-birth">Date of Birth</label>
-            <BirthDatePicker
-                selected={employee.dateOfBirth}
-                onChange={(date) => handleDateChange('dateOfBirth', date)}
-            />
+                <label htmlFor="date-of-birth">Date of Birth</label>
+                <BirthDatePicker
+                    selected={employee.dateOfBirth}
+                    onChange={(date) => handleDateChange('dateOfBirth', date)}
+                />
 
-            <label htmlFor="start-date">Start Date</label>
-            <StartDatePicker
-                selected={employee.startDate}
-                onChange={(date) => handleDateChange('startDate', date)}
-            />
 
-            <fieldset className="address">
-                <legend>Address</legend>
+            </fieldset>
+
+            <fieldset className="address-details">
+                <legend>Address Details</legend>
 
                 <label htmlFor="street">Street</label>
                 <input type="text" id="street" name="street" value={employee.street} onChange={handleChange} />
@@ -86,8 +85,16 @@ function Form({ onSave }) {
                 <label htmlFor="zip-code">Zip Code</label>
                 <input type="number" id="zip-code" name="zipCode" value={employee.zipCode} onChange={handleChange} />
             </fieldset>
-            
-            <DepartmentSelect value={employee.department} onChange={handleChange} />
+
+            <fieldset className="employment-details">
+                <legend>Employment Details</legend>
+                <DepartmentSelect value={employee.department} onChange={handleChange}/>
+                <label htmlFor="start-date">Start Date</label>
+                <StartDatePicker
+                    selected={employee.startDate}
+                    onChange={(date) => handleDateChange('startDate', date)}
+                />
+            </fieldset>
 
             <button type="submit">Save</button>
         </form>

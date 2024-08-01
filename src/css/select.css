@@ -1,0 +1,17 @@
+select {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* scrollbar width */
+::-webkit-scrollbar {
+    display: none;
+}
