@@ -1,5 +1,7 @@
 ﻿import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Button from "./Button";
+import '../css/header.css';
 
 function Header() {
     const location = useLocation();
@@ -16,13 +18,13 @@ function Header() {
             {location.pathname === '/list' ? 
                 (
                     <Link to="/new">
-                        <button className="btn">Create Employee</button>
+                        <Button className="submit-btn" type="submit" text="Create Employee" />
                     </Link>
                 ) 
                 : 
                 (
                     <Link to="/list">
-                        <button className="btn">List of Employees</button>
+                        <Button className="list-btn" text="List of Employees" />
                     </Link>
                 )
             }

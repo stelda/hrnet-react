@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import '../css/table.css';
+import Button from "./Button";
 
 function Pagination({ rowsPerPage, setRowsPerPage, currentPage, setCurrentPage, totalItems }) {
     const handleChangeRowsPerPage = (event) => {
@@ -22,24 +23,30 @@ function Pagination({ rowsPerPage, setRowsPerPage, currentPage, setCurrentPage, 
     return (
         <div className='pagination'>
             <div className='results'>
-                <label htmlFor="rowsPerPage">Show </label>
+                <p htmlFor="rowsPerPage">Show </p>
                 <select id="rowsPerPage" value={rowsPerPage} onChange={handleChangeRowsPerPage}>
                     <option value={10}>10</option>
                     <option value={25}>25</option>
                     <option value={50}>50</option>
                     <option value={100}>100</option>
                 </select>
-                <span> results</span>
+                <p> results</p>
             </div>
 
             <div className='pages'>
-                <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-                    Previous
-                </button>
-                <span> Page {currentPage} of {Math.ceil(totalItems / rowsPerPage)}</span>
-                <button onClick={handleNextPage} disabled={currentPage === Math.ceil(totalItems / rowsPerPage)}>
-                    Next
-                </button>
+                <Button
+                    className="prev-btn"
+                    onClick={handlePreviousPage}
+                    disabled={currentPage === 1}
+                    text="Previous"
+                />
+                <p> Page {currentPage} of {Math.ceil(totalItems / rowsPerPage)}</p>
+                <Button
+                    className="next-btn"
+                    onClick={handleNextPage}
+                    disabled={currentPage === Math.ceil(totalItems / rowsPerPage)}
+                    text="Next"
+                />
             </div>
         </div>
     );

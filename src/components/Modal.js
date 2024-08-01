@@ -1,4 +1,5 @@
 ﻿import React from 'react';
+import Button from './Button';
 import '../css/modal.css';
 
 function Modal({ isOpen, onClose, message }) {
@@ -7,9 +8,7 @@ function Modal({ isOpen, onClose, message }) {
     return (
         <div className="modal-overlay">
             <div className="modal-content">
-                <button className="modal-close" onClick={onClose}>
-                    &times;
-                </button>
+                <Button className="modal-close" onClick={onClose} text="&times;" />
                 <div className="modal-message">
                     {message}
                 </div>

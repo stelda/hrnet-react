@@ -1,8 +1,10 @@
 ﻿import React, { useState } from 'react';
-import { BirthDatePicker, StartDatePicker } from '../components/DatePicker';
-import { StateSelect, DepartmentSelect } from '../components/Select';
+import { BirthDatePicker, StartDatePicker } from './DatePicker';
+import { StateSelect, DepartmentSelect } from './Select';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../css/custom-datepicker.css';
+import '../css/form.css';
+import Button from "./Button";
 
 function Form({ onSave }) {
 
@@ -96,7 +98,7 @@ function Form({ onSave }) {
                 />
             </fieldset>
 
-            <button type="submit">Save</button>
+            <Button className="submit-btn" type="submit" text="Save" />
         </form>
     );
 }

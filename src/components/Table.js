@@ -41,7 +41,7 @@ function Table({data}) {
         <div>
             <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
 
-            <table>
+            <table className="table-elements">
                 <thead>
                 <tr>
                     {headers.map((header, index) => (

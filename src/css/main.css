@@ -1,137 +1,16 @@
-.title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
 }
 
-label {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 10px;
+.container h2 {
+    font-size : 1.2rem;
 }
 
-.address {
-    margin-top: 10px;
-}
 
-/* Header */
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-}
 
-header h1 {
-    font-size: 2rem;
-    color: #738821;
-}
-
-header .home-link {
-    text-decoration: none;
-}
-
-button {
-    padding: 0.5rem 1rem;
-    border: none;
-    background-color: #738821;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #B8CD4E;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem;
-}
-
-.error404 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 1rem;
-    text-align: center;
-    height: 80vh;
-}
-
-.container {
-    margin: 20px;
-}
-
-/* Form */
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(184,205, 78, 0.1);
-}
-
-fieldset {
-    width: 100%;
-    margin: 10px;
-    box-sizing: border-box;
-    border: none;
-}
-
-legend {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: bold;
-    padding: 0 10px;
-}
-
-label {
-    display: flex;
-    color: #738821;
-    margin-bottom: 5px;
-}
-
-input[type="text"], input[type="date"], input[type="number"], select {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 0.9em;
-    color: #333;
-}
-
-/* Pour les navigateurs WebKit (Chrome, Safari, Edge) */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Pour les navigateurs Firefox */
-input[type="number"] {
-    -moz-appearance: textfield;
-}
 
 
