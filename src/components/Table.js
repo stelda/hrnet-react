@@ -85,17 +85,23 @@ function Table({data}) {
                 </tr>
                 </thead>
                 <tbody>
-                {selectedData.map((row, rowIndex) => (
-                    <tr key={rowIndex}>
-                        {headers.map((header, colIndex) => (
-                            <td key={colIndex}>{row[header] instanceof Date ? row[header].toLocaleDateString('en-US', {
-                                    year: 'numeric',
-                                    month: '2-digit',
-                                    day: '2-digit'
-                                }) : row[header]}</td>
-                            ))}
-                        </tr>
-                    ))}
+                    {sortedFilteredData.length === 0 ? (
+                        <tr><td colSpan={headers.length}>No results found.</td></tr>
+                    ) : (
+                        selectedData.map((row, rowIndex) => (
+                            <tr key={rowIndex}>
+                                {headers.map((header, colIndex) => (
+                                    <td key={colIndex}>
+                                        {row[header] instanceof Date ? row[header].toLocaleDateString('en-US',{
+                                            year: 'numeric',
+                                            month: '2-digit',
+                                            day: '2-digit'
+                                        }) : row[header]}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))
+                    )}
                 </tbody>
             </table>
 
