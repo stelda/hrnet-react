@@ -8,7 +8,7 @@ const mockemployees = [
         street: '123 Park St',
         city: 'Montgomery',
         state: 'AL',
-        zipCode: '12345'
+        zipCode: '36101'
     },
     {
         firstName: 'Jane',
@@ -17,9 +17,9 @@ const mockemployees = [
         startDate:  new Date('2020-05-01'),
         department: 'Engineering',
         street: '456 Main St',
-        city: 'Brooks',
-        state: 'AK',
-        zipCode: '52011'
+        city: 'Houston',
+        state: 'TX',
+        zipCode: '77007'
     },
     {
         firstName: 'Declan',
@@ -30,7 +30,7 @@ const mockemployees = [
         street: '789 Oak St',
         city: 'New York',
         state: 'NY',
-        zipCode: '56789'
+        zipCode: '10005'
     },
     {
         firstName: 'Emily',
@@ -41,7 +41,7 @@ const mockemployees = [
         street: '987 Kerry St',
         city: 'Boston',
         state: 'MA',
-        zipCode: '98765'
+        zipCode: '02108'
     },
     {
         firstName: 'Lucy',
@@ -52,7 +52,7 @@ const mockemployees = [
         street: '123 Killarney St',
         city: 'Chicago',
         state: 'IL',
-        zipCode: '12346'
+        zipCode: '60601'
     },
     {
         firstName: 'Rick',
@@ -63,7 +63,7 @@ const mockemployees = [
         street: '456 Castle St',
         city: 'Miami',
         state: 'FL',
-        zipCode: '44444'
+        zipCode: '33101'
     },
     {
         firstName: 'Jason',
@@ -74,7 +74,7 @@ const mockemployees = [
         street: '991 Muckross St',
         city: 'Los Angeles',
         state: 'CA',
-        zipCode: '56784'
+        zipCode: '90001'
     },
     {
         firstName: 'Tony',
@@ -85,7 +85,7 @@ const mockemployees = [
         street: '2782 Dingle St',
         city: 'San Diego',
         state: 'CA',
-        zipCode: '56998'
+        zipCode: '92101'
     },
     {
         firstName: 'Sam',
@@ -96,7 +96,7 @@ const mockemployees = [
         street: '156 Galway St',
         city: 'San Francisco',
         state: 'CA',
-        zipCode: '56998'
+        zipCode: '94101'
     }
 ];
 

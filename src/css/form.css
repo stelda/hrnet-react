@@ -41,14 +41,21 @@ input[type="text"], input[type="date"], input[type="number"], select {
     color: #333;
 }
 
-/* Pour les navigateurs WebKit (Chrome, Safari, Edge) */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
+/*!* Pour les navigateurs WebKit (Chrome, Safari, Edge) *!*/
+/*input[type="number"]::-webkit-outer-spin-button,*/
+/*input[type="number"]::-webkit-inner-spin-button {*/
+/*    -webkit-appearance: none;*/
+/*    margin: 0;*/
+/*}*/
 
-/* Pour les navigateurs Firefox */
-input[type="number"] {
-    -moz-appearance: textfield;
+/*!* Pour les navigateurs Firefox *!*/
+/*input[type="number"] {*/
+/*    -moz-appearance: textfield;*/
+/*}*/
+
+.error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
