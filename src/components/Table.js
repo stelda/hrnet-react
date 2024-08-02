@@ -3,9 +3,10 @@ import Pagination from '../components/Pagination';
 import SearchBar from '../components/SearchBar';
 
 function Table({data}) {
-    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [rowsPerPage, setRowsPerPage] = useState(25);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
+    const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
 
     const HEADER_LABELS = {
         firstName: 'First Name',
@@ -27,9 +28,36 @@ function Table({data}) {
         );
     };
 
+    const sortedData = (data) => {
+        if (sortConfig.key) {
+            return [...data].sort((a, b) => {
+                const aValue = a[sortConfig.key];
+                const bValue = b[sortConfig.key];
+
+                if (aValue < bValue) {
+                    return sortConfig.direction === 'ascending' ? -1 : 1;
+                }
+                if (aValue > bValue) {
+                    return sortConfig.direction === 'ascending' ? 1 : -1;
+                }
+                return 0;
+            });
+        }
+        return data;
+    };
+
     const filteredData = handleSearch(data);
+    const sortedFilteredData = sortedData(filteredData);
     const startIndex = (currentPage - 1) * rowsPerPage;
-    const selectedData = filteredData.slice(startIndex, startIndex + rowsPerPage);
+    const selectedData = sortedFilteredData.slice(startIndex, startIndex + rowsPerPage);
+
+    const requestSort = (key) => {  // Gère la demande de tri
+        let direction = 'ascending';
+        if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+            direction = 'descending';
+        }
+        setSortConfig({ key, direction });
+    };
 
     if (data.length === 0) {
         return <p>No data available.</p>;
@@ -45,15 +73,22 @@ function Table({data}) {
                 <thead>
                 <tr>
                     {headers.map((header, index) => (
-                        <th key={index}>{HEADER_LABELS[header] || header}</th>
+                        <th key={index} onClick={() => requestSort(header)}>
+                            {HEADER_LABELS[header] || header}
+                            <span className="arrow">
+                                {sortConfig.key === header ? (
+                                    sortConfig.direction === 'ascending' ? ' ▲' : ' ▼'
+                                ) : null}
+                            </span>
+                        </th>
                     ))}
                 </tr>
                 </thead>
                 <tbody>
-                    {selectedData.map((row, rowIndex) => (
-                        <tr key={rowIndex}>
-                            {headers.map((header, colIndex) => (
-                                <td key={colIndex}>{row[header] instanceof Date ? row[header].toLocaleDateString('en-US', {
+                {selectedData.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                        {headers.map((header, colIndex) => (
+                            <td key={colIndex}>{row[header] instanceof Date ? row[header].toLocaleDateString('en-US', {
                                     year: 'numeric',
                                     month: '2-digit',
                                     day: '2-digit'

@@ -23,7 +23,7 @@ function Pagination({ rowsPerPage, setRowsPerPage, currentPage, setCurrentPage, 
     return (
         <div className='pagination'>
             <div className='results'>
-                <p htmlFor="rowsPerPage">Show </p>
+                <p>Show </p>
                 <select id="rowsPerPage" value={rowsPerPage} onChange={handleChangeRowsPerPage}>
                     <option value={10}>10</option>
                     <option value={25}>25</option>
