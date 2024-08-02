@@ -23,3 +23,18 @@
 .react-datepicker__year-read-view--down-arrow, .react-datepicker__month-read-view--down-arrow, .react-datepicker__month-year-read-view--down-arrow, .react-datepicker__navigation-icon::before {
     border-color: #ffffff;
 }
+
+.birthdatepicker-header {
+    margin: 0 13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.birthdatepicker-header select {
+    margin: 0;
+    width: 100px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+
+}
