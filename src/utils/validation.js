@@ -15,8 +15,8 @@ export const validate = (employee) => {
 
     if (!employee.street.trim()) {
         errors.street = 'Street is required';
-    } else if (!/^[a-zA-ZÀ-ÿ' -]{2,40}$/.test(employee.street)) { // Street name with optional hyphen and space
-        errors.street = 'Street should be at least 2 characters';
+    } else if (!/^\d*\s*[a-zA-ZÀ-ÿ' -]{2,40}$/.test(employee.street)) { // Street name with optional hyphen and space
+        errors.street = 'Street address is invalid';
     }
 
     if (!employee.city.trim()) {
