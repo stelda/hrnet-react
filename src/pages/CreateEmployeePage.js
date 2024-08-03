@@ -10,6 +10,18 @@ function CreateEmployeePage() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const saveEmployee = (employee) => {
+
+        if (Object.keys(employee).length === 0) {
+            alert('Invalid employee data');
+            return;
+        }
+
+        employee.dateOfBirth = new Date(employee.dateOfBirth);
+        employee.startDate = new Date(employee.startDate);
+
+        const storedEmployees = JSON.parse(localStorage.getItem('employees')) || [];
+        storedEmployees.push(employee);
+        localStorage.setItem('employees', JSON.stringify(storedEmployees));
         dispatch(addEmployee(employee));
         setModalIsOpen(true);
     };

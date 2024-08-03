@@ -6,10 +6,16 @@ const employeeSlice = createSlice({
     initialState: [mockemployees],
     reducers: {
         addEmployee: (state, action) => {
-            state.push(action.payload);
+            if (Object.keys(action.payload).length !== 0) {
+                state.push(action.payload);
+                localStorage.setItem('employees', JSON.stringify(state));
+            }
+        },
+        setEmployees: (state, action) => {
+            return action.payload;
         }
     }
 });
 
-export const { addEmployee } = employeeSlice.actions;
+export const { addEmployee, setEmployees } = employeeSlice.actions;
 export default employeeSlice.reducer;

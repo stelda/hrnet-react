@@ -1,6 +1,6 @@
 ﻿import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addEmployee } from '../redux/employeeSlice';
+import { setEmployees } from '../redux/employeeSlice';
 import Table from '../components/Table';
 
 function ViewEmployeePage() {
@@ -9,9 +9,10 @@ function ViewEmployeePage() {
 
     useEffect(() => {
         const storedEmployees = JSON.parse(localStorage.getItem('employees')) || [];
-        dispatch(addEmployee(storedEmployees));
+        if (storedEmployees.length > 0) {
+            dispatch(setEmployees(storedEmployees));
+        }
     }, [dispatch]);
-
 
     return (
         <div>
