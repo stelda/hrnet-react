@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Pagination from '../components/Pagination';
 import SearchBar from '../components/SearchBar';
+import { formatDate} from "../utils/dateFormat";
 
 function Table({data}) {
     const [rowsPerPage, setRowsPerPage] = useState(25);
@@ -19,6 +20,8 @@ function Table({data}) {
         state: 'State',
         zipCode: 'Zip Code'
     };
+
+    const DATE_FIELDS = ['dateOfBirth', 'startDate'];
 
     const handleSearch = (data) => {
         return data.filter(row =>
@@ -92,11 +95,9 @@ function Table({data}) {
                             <tr key={rowIndex}>
                                 {headers.map((header, colIndex) => (
                                     <td key={colIndex}>
-                                        {row[header] instanceof Date ? row[header].toLocaleDateString('en-US',{
-                                            year: 'numeric',
-                                            month: '2-digit',
-                                            day: '2-digit'
-                                        }) : row[header]}
+                                        {DATE_FIELDS.includes(header)
+                                            ? formatDate(row[header])
+                                            : row[header]}
                                     </td>
                                 ))}
                             </tr>

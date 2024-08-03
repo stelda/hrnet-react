@@ -16,8 +16,8 @@ function CreateEmployeePage() {
             return;
         }
 
-        employee.dateOfBirth = new Date(employee.dateOfBirth);
-        employee.startDate = new Date(employee.startDate);
+        employee.dateOfBirth = new Date(employee.dateOfBirth).toISOString();
+        employee.startDate = new Date(employee.startDate).toISOString();
 
         const storedEmployees = JSON.parse(localStorage.getItem('employees')) || [];
         storedEmployees.push(employee);
