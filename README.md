@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# **HRnet React Application**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+L'application HRnet est une application de gestion des employés qui permet de créer et afficher les informations des employés d'une entreprise. Ce projet a pour objectif de moderniser une application existante, initialement développée en jQuery, en la convertissant en une application plus performante et maintenable, en utilisant React et Redux.
 
-In the project directory, you can run:
+## **Liens du Projet**
 
-### `npm start`
+### **Version React**
+- **Code Source :** [GitHub Repository](https://github.com/stelda/hrnet-react)
+- **Site Déployé :** [Vercel Deployment](https://hrnet-react-omega.vercel.app/new)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **Version jQuery du Projet HRnet**
+- **Code Source :** [Repo d'origine cloné sur GitHub](https://github.com/stelda/hrnet-jquery)
+- **Site Déployé :** [Vercel Deployment](https://hrnet-jquery-two.vercel.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **Composant Modal en React**
+- **Code Source :** [GitHub Repository](https://github.com/stelda/react-modal-stelda)
+- **Package Publié :** [NPM Package](https://www.npmjs.com/package/react-modal-stelda)
 
-### `npm test`
+### **Rapports de Performances**
+- **Documentation et Analyses :** [GitHub Repository](https://github.com/stelda/hrnet-performances)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Installation**
 
-### `npm run build`
+Pour installer l'application React HRnet, vous pouvez cloner le dépôt GitHub et installer les dépendances via npm :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clonez le dépôt :
+   ```bash
+      git clone https://github.com/stelda/hrnet-react.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Accédez au répertoire du projet :
+     ```bash
+     cd hrnet-react
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Installez les dépendances :
+     ```bash
+     npm install
 
-### `npm run eject`
+4. Lancement de l'application en local :
+     ```bash
+     npm start
+     ```
+     Cela démarre l'application en mode développement. Vous pouvez accéder à l'application via http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Licence
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Font Playfair Display
+Le projet utilise la police **Playfair Display**, qui est sous la licence [SIL Open Font License, 1.1](https://scripts.sil.org/OFL). Vous pouvez consulter la police sur [Google Fonts](https://fonts.google.com/specimen/Playfair+Display).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### React Datepicker
+Le projet utilise le package **react-datepicker**. Vous pouvez consulter sa licence et ses conditions d'utilisation sur la page [npm du package react-datepicker](https://www.npmjs.com/package/react-datepicker).
